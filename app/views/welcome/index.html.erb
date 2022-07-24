@@ -1,0 +1,29 @@
+<%=content_for :alertmessage do%>
+<%if t('horaires', default:"00") != "00"%>
+    <div class="container">
+    <div class="alert alert-success" role="alert">
+<%= t('horaires').html_safe%>
+
+
+</div>
+</div>
+<%end%>
+<%end%>
+
+    <div class="container">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+                           <a href="/catalogue"> <%= image_tag t('credit'), class: "img-responsive", alt: "BUT SOLDES Gf"%></a>
+            
+            <div id="cetelem" class="well text-center" style="margin-top:40px">
+                Un crédit vous engage et doit être remboursé.<br/>
+                Vérifiez vos capacités de remboursement avant de vous engager.
+                <hr>
+                <div class="text-alert">Avec Cafinéo, choisissez le montant de vos mensualités<sup>*</sup></div>
+                <div><small><sup>*</sup> Dans la limite du remboursement obligatoire. Voir conditions en magasins</small></div>
+            </div>
+
+        </div>
+
+    </div>
+

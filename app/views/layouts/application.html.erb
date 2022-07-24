@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome!</title>
+
+   
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+.newsletter {
+text-align:center;
+padding:10px 0px 25px 0px;
+background: linear-gradient(0.25turn, #fcbe42, #ffdc17, #fce042);
+width: 250px;
+float:right;
+color:#fff;
+font-weight:900;
+font-size:14px;
+
+}
+footer {
+background:#6e6e6e;
+color:#fff;
+}
+footer > div.container {
+padding: 30px 50px 30px 50px;
+}
+footer > div > div, footer > div > div >  *, footer > div > div > *:hover, footer > div > div > *:visited {
+color:#fff;
+font-size:11px;
+font-weight:500;
+}
+#cetelem {
+background:#000;
+color:#fff;
+font-weight:900;
+font-size:17px;
+
+}
+.text-alert {
+color:#ebdc34;
+}
+.mybutton, .mybutton.mybutton.navbar-toggle, .mybutton.navbar-toggle.collapsed {
+border: 1px solid #fff;
+}
+.mybutton > * {
+border: 1px solid #fff;
+}
+.montonderouge {
+color: #eb2f2f;
+}
+.mondomtom {
+width:100px;
+height:100px;
+}
+.domtom {
+width:100px;
+height:100px;
+margin-left:20px;
+
+}
+
+<%['martinique','guadeloupe','guyane','reunion'].each do |t|%>
+.domtom.fa<%=t%>:hover {
+background: center / contain no-repeat url("/images/<%=t%>2.png");
+}
+.domtom.fa<%=t%> {
+background: center / contain no-repeat url("/images/<%=t%>1.png");
+}
+<%end%>
+
+</style>
+
+<style>
+.mynavbarheader:focus {
+
+}
+.mynav, .mynav > *, .mynav > * > *, .container-fluid,.mynavbarheader,.mynavbarheader > * {
+background:#000;
+color:#fff;
+}
+.itemmenunav, .itemmenunav:hover, .itemmenunav:visited {
+color:#fff;
+}
+.nav > li > a:hover {
+background:red;
+}
+</style>
+</head>
+<body>
+
+    <div class="">
+        
+            <div class="header container">
+
+    <div class="col-xs-3 col-sm-2 col-md-2 header-block">
+        <a href="/">
+                        <img src="/images/04f6a4a.gif" alt="Logo" class="img-responsive"/>
+                    </a>
+
+    </div>
+
+    <div class="col-xs-7 col-xs-offset-2 col-sm-4 col-md-3  header-block col-sm-offset-6 col-md-offset-0 col-md-push-7 text-right newsletter">
+        <p>Recevez nos bons plans ...</p>
+        <a class="btn btn-default" href="/newsletter">Inscription à la newsletter</a>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-7 col-md-pull-3 header-block">
+
+        <div class="departments text-center">
+<%['martinique','guadeloupe','guyane','reunion'].each do |t|%>
+
+            <div class="col-xs-3"><a class="mondomtom" href="<%="http://#{APP_CONFIG["url_#{t}"]}:#{request.port}"+root_path%>"><div class="domtom fa<%=t%>"></div><br/><%=APP_CONFIG["#{t}"]%></a></div>
+<%end%>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+            <div class="row">
+                <div class="container">
+    <nav class="navbar mynav">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header mynavbarheader">
+                <button type="button" class="mybutton navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="itemmenu"><a class="itemmenunav" href="/">Accueil <span class="sr-only">(current)</span></a></li>
+                    <li class="itemmenu"><a class="itemmenunav" href="/catalogue">Catalogue <span class="sr-only">(current)</span></a></li>
+                    <li class="itemmenu"><a class="itemmenunav" href="/sav">Magasins et SAV <span class="sr-only">(current)</span></a></li>
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+    </nav>
+<%=yield :alertmessage%>
+</div>
+
+
+
+            </div>
+
+        
+
+        <%=yield%>
+
+
+    
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="col-xs-6"><a href="/mentions-legales">Mentions légales</a></div>
+            <div class="col-xs-6 text-right">Copyright &copy; 2009-2021 BUTDOM.COM Tous droits réservés.</div>
+        </div>
+    </footer>
+
+
+
+    
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</body>
+</html>
+

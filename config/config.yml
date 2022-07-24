@@ -1,0 +1,10 @@
+development:
+  guyane: "Guyane"
+  url_guyane: "guyane.butdom.fr"
+  martinique: "Martinique"
+  url_martinique: "martinique.butdom.fr"
+  guadeloupe: "Guadeloupe"
+  url_guadeloupe: "guadeloupe.butdom.fr"
+  reunion: "Réunion"
+  url_reunion: "reunion.butdom.fr"
+production:

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome!</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MQDQPPB');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<style>
+.montonderouge {
+color: #eb2f2f;
+}
+.mondomtom {
+width:100px;
+height:100px;
+}
+.domtom {
+width:100px;
+height:100px;
+margin-left:20px;
+
+}
+
+<%['martinique','guadeloupe','guyane','reunion'].each do |t|%>
+.domtom.fa<%=t%>:hover {
+background: center / contain no-repeat url("/images/<%=t%>2.png");
+}
+.domtom.fa<%=t%> {
+background: center / contain no-repeat url("/images/<%=t%>1.png");
+}
+<%end%>
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQDQPPB"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div id="defaut_home" class="container">
+
+        <div class="col-xs-12 col-sm-3">
+                        <img src="/images/butgroslogo.png" alt="Example"/>
+                    </div>
+        <div class="col-xs-12 col-sm-9 text-center">
+            <h1>Bienvenue sur le site des magasins BUT en outre-mer</h1>
+            <h2>Veuillez sélectionner votre département</h2>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="departments text-center">
+<%['martinique','guadeloupe','guyane','reunion'].each do |t|%>
+
+            <div class="col-xs-3"><a class="mondomtom" href="<%="http://#{APP_CONFIG["url_#{t}"]}:#{request.port}"+root_path%>"><div class="domtom fa<%=t%>"></div><br/><%=APP_CONFIG["#{t}"]%></a></div>
+<%end%>
+
+        </div>
+
+    </div>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="/css/2c8c367.css"/>
+    
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</body>
+</html>
+
